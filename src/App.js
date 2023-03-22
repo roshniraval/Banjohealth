@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import OrderList from './components/OrderList';
+import CreateOrder from './components/CreateOrder';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+// import ToastComponent from './components/ToastComponent';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return (    
+    <Container fluid>
+      {/* <ToastComponent bg="success" toastMsg="Order created successfully" /> */}
+      <Row className="row-container">
+        <Col xs={12} md={8}><OrderList /> </Col>
+        <Col xs={12} md={4}><CreateOrder /> </Col>
+      </Row>      
+    </Container>
   );
 }
 
